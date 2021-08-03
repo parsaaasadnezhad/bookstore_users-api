@@ -1,11 +1,11 @@
 package users
 
 import (
-	"main/utils/errors"
+	"github.com/gin-gonic/gin"
 	"main/domain/users"
 	"main/services"
+	"main/utils/errors"
 	"net/http"
-	"github.com/gin-gonic/gin"
 	"strconv"
 )
 
@@ -32,7 +32,7 @@ func CreateUser(c *gin.Context) {
 		return
 	}
 
-	result, saveErr := services.CreaateUser(user)
+	result, saveErr := services.CreateUser(user)
 	if saveErr != nil {
 		c.JSON(saveErr.Status , saveErr)
 		return

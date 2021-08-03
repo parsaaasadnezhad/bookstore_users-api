@@ -13,7 +13,7 @@ func GetUser(userId int64) (*users.User , *errors.RestErr){
 	return result , nil
 }
 
-func CreaateUser(user users.User) (*users.User, *errors.RestErr) {
+func CreateUser(user users.User) (*users.User, *errors.RestErr) {
 	if err := user.Validate(); err != nil {
 		return nil, err
 	}
